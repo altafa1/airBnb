@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Entity
@@ -20,11 +22,16 @@ public class Room {
     @Column(name = "price", nullable = false)
     private Double price;
 
-    @Column(name = "count", nullable = false)
-    private int count;
+    @Column(name = "room_count", nullable = false)
+    private int roomCount;
+
+    @Column(name = "date", nullable = false)
+    private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "property_id")
     private Property property;
+
+
 
 }
