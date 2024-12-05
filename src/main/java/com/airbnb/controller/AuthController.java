@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
     private AppUserService as;
     private AppUserRepository ar;
-
     public AuthController(AppUserService as, AppUserRepository ar) {
         this.as = as;
         this.ar = ar;

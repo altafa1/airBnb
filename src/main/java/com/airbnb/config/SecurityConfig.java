@@ -14,20 +14,20 @@ public class SecurityConfig {
         this.jwtFilter = jwtFilter;
     }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http
- )throws Exception{
-     http.csrf().disable().cors().disable();
-     http.addFilterBefore(jwtFilter, AuthorizationFilter.class);
-//     http.authorizeHttpRequests().requestMatchers("/api/v1/authorization/createuser","/api/v1/authorization/login","/api/v1/authorization/createpropertyowner")
-//             .permitAll()
-//             .requestMatchers("/api/v1/authorization/createpropertymanager").hasRole("ADMIN")
-//             .requestMatchers("/api/v1/authorization/addproperty").hasAnyRole("MANAGER","OWNER","ADMIN")
-//             .anyRequest().authenticated();
-        http.authorizeHttpRequests().anyRequest().permitAll();
-     return http.build();
- }
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(
+//            HttpSecurity http
+// )throws Exception{
+//     http.csrf().disable().cors().disable();
+//     http.addFilterBefore(jwtFilter, AuthorizationFilter.class);
+////     http.authorizeHttpRequests().requestMatchers("/api/v1/authorization/createuser","/api/v1/authorization/login","/api/v1/authorization/createpropertyowner")
+////             .permitAll()
+////             .requestMatchers("/api/v1/authorization/createpropertymanager").hasRole("ADMIN")
+////             .requestMatchers("/api/v1/authorization/addproperty").hasAnyRole("MANAGER","OWNER","ADMIN")
+////             .anyRequest().authenticated();
+//        http.authorizeHttpRequests().anyRequest().permitAll();
+//     return http.build();
+// }
 
 
 }
